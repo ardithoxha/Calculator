@@ -4,12 +4,16 @@ import './App.css';
 import Calculator from './Calculator'
 
 function App() {
-  const keyArray = {"0": "zero", "1": "one", "2": "two", "3": "three"}
-    const dispatch = useDispatch();
-    const handleKeyPress = (e) => dispatch({type: (e.key === "+" || e.key === "-" || e.key === "*" || e.key === "/") ? "OPERATION": e.key === "Enter"? "equals": "INPUT", userInput: e.key})
-    
+  
+  const dispatch = useDispatch();
+  const handleKeyPress = (e) => dispatch({
+    type: (e.key.match(/[-|+|*|/]/) ? "OPERATION" : (e.key === "Backspace" ? "clear": (e.key === "Enter" ? "equals" :
+              (e.key.match(/[.0-9]/) && !e.key.match(/[A-Z]/) ? "INPUT" : "default")))),
+    userInput: e.key
+  })
+  document.addEventListener("keyup", handleKeyPress);
 
-    document.addEventListener("keyup", handleKeyPress);
+  
   return (
     <React.StrictMode>
       <Calculator />
