@@ -1,18 +1,20 @@
+import { useSelector } from "react-redux";
 import Button from "./Buttons";
 import Display from "./Display";
 
 
 function Calculator() {
-    const renderButton = (type, style) => {
+    const renderButton = (input, className) => {
         return (
-            <Button name={type} className={style} />
+            <Button input={input} type={className} />
         );
     }
 
+    const state = useSelector(state => state);
 
     return (
         <div className="calculator">
-            <Display />
+            <Display input={state.userInput} display={state.displayInput}/>
             {renderButton("AC", "clear")}
             {renderButton("/", "divide")}
             {renderButton("x", "multiply")}

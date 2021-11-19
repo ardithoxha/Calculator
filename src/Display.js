@@ -1,8 +1,8 @@
-function Display() {
+function Display(props) {
     return (
         <div className="displayContainer">
-            <div className="output"></div>
-            <div className="input">0</div>
+            <div className="output">{props.display}</div>
+            <div className="input">{props.input}</div>
 
         </div>
     );
