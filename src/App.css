@@ -107,7 +107,7 @@ body {
   font-size: 30px;
   font-family: digital;
   font-weight:500;
-  height: 32px;
+  min-height: 32px;
   min-width: 323px;
   padding: 0;
 }

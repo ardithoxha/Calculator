@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Button from "./Buttons";
 import Display from "./Display";
 
@@ -9,9 +9,7 @@ function Calculator() {
             <Button input={input} type={className} />
         );
     }
-
     const state = useSelector(state => state);
-
     return (
         <div className="calculator">
             <Display input={state.userInput} display={state.displayInput}/>

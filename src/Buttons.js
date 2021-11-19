@@ -9,9 +9,9 @@ function Button(props) {
     } else if (props.type === "equals") {
         action = () => dispatch({ type: props.type });
     } else if (props.type === "divide" || props.type === "multiply" || props.type === "substract" || props.type === "add") {
-        action = () => dispatch({ type: "OPERATION", userInput: props.input });
+        action = () => dispatch({ type: "OPERATION", userInput: (props.input === "x" ? "*": props.input) });
     } else {
-        action = () => dispatch({ type: "INPUT", userInput: props.input });
+        action = () => dispatch({ type: "INPUT", userInput: props.input});
     }
 
     return (

@@ -1,4 +1,4 @@
-function performOperations(displayInput) {
+function calculateResult(displayInput) {
     let tempValue = displayInput[0];
     let tempArray = [];
     let tempFinalValue;
@@ -70,4 +70,4 @@ function performOperations(displayInput) {
 
 }
 
-export default performOperations;
+export default calculateResult;
